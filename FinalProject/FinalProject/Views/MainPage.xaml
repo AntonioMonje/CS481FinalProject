@@ -4,24 +4,24 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FinalProject.Views.MainPage"
-             Title="MainPage"  BackgroundImage="heart2.jpg">
+             Title="MainPage"  BackgroundImage="lift.jpg">
 
     <ScrollView>
         <StackLayout x:Name="StackView">
             <Label Text="Main Menu" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            <Button Text="Workout" TextColor="Blue" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" 
+            <Button Text="Workout" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
                      BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage1Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>
-            <Button Text="Qoutes" TextColor="Blue" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" 
+            <Button Text="Qoutes" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
                     BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage2Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>
-            <Button Text="Stats" TextColor="Blue" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" 
+            <Button Text="Stats" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
                     BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage3Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>
-            <Label VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Text="!Time to get your workout on!" TextColor="White"/>
+            <Label VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Text="!Time to get your workout on!" TextColor="Black"/>
         </StackLayout>
     </ScrollView>
     
