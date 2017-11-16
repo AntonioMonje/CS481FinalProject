@@ -20,8 +20,8 @@ namespace FinalProject
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<Workout>();
-            Container.RegisterTypeForNavigation<Qoutes>();
             Container.RegisterTypeForNavigation<Stats>();
+            Container.RegisterTypeForNavigation<Qoutes>();
         }
     }
 }

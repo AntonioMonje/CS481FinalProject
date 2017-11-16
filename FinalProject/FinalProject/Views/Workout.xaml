@@ -4,9 +4,20 @@
              x:Class="FinalProject.Views.Workout">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button
+            Text="Go Back!"
+            Command="{Binding GoBackCommand}" />
+            <Label
+            Text="Workout Soon!" />
+            <Label
+            Text="Workout Coming Soon!" />
+            <Label
+            Text="Workouts Coming Soon!" />
+            <Label
+            Text="Workouts Coming Soon!" />
+            <Label
+            Text="Inspirational picture Coming Soon!" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

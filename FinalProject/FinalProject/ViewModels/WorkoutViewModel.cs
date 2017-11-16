@@ -1,13 +1,14 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prism.Navigation;
+using Xamarin.Forms.Xaml;
 
 namespace FinalProject.ViewModels
 {
-    public class StatsViewModel : BindableBase, INavigatedAware
+    public class WorkoutViewModel : BindableBase, INavigatedAware
     {
         INavigationService _navigationService;
 
@@ -15,7 +16,7 @@ namespace FinalProject.ViewModels
 
 
 
-        public StatsViewModel(INavigationService navigationService)
+        public WorkoutViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
 
@@ -37,4 +38,3 @@ namespace FinalProject.ViewModels
         }
     }
 }
-

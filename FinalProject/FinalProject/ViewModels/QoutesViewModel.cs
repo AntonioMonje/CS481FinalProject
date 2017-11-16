@@ -1,40 +1,40 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prism.Navigation;
+using Xamarin.Forms.Xaml;
 
 namespace FinalProject.ViewModels
 {
-    public class QoutesViewModel : BindableBase, INavigationAware
+    public class QoutesViewModel : BindableBase, INavigatedAware
     {
-        private string _title;
-        public string Title
+        INavigationService _navigationService;
+
+        public DelegateCommand GoBackCommand { get; set; }
+
+        
+
+        public QoutesViewModel(INavigationService navigationService)
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            _navigationService = navigationService;
+
+            GoBackCommand = new DelegateCommand(GoBack);
         }
 
-        public QoutesViewModel()
+        private void GoBack()
         {
-
+            _navigationService.GoBackAsync();
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
-
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
+           
         }
     }
 }

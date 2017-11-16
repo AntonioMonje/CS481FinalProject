@@ -4,9 +4,21 @@
              x:Class="FinalProject.Views.Qoutes">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button
+            Text="Go Back!"
+            Command="{Binding GoBackCommand}" />
+            <Label
+            Text="Daily Qoute Coming Soon!" />
+            <Label
+            Text="Daily Qoute Coming Soon!" />
+            <Label
+            Text="Daily Qoute Coming Soon!" />
+            <Label
+            Text="Daily Qoute Coming Soon!" />
+            <Label
+            Text="Inspirational picture Coming Soon!" />
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

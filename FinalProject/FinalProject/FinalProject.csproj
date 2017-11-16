@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ExerciseViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\QoutesViewModel.cs" />
     <Compile Include="ViewModels\StatsViewModel.cs" />
+    <Compile Include="ViewModels\WorkoutViewModel.cs" />
     <Compile Include="Views\Qoutes.xaml.cs">
       <DependentUpon>Qoutes.xaml</DependentUpon>
     </Compile>
