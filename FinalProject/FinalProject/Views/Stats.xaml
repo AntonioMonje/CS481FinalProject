@@ -1,22 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.Views.Stats">
+             x:Class="FinalProject.Views.Stats"
+             BackgroundImage="black.jpg">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Your Stats" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
             <Button
             Text="Go Back!"
+                BackgroundColor="White"
+                TextColor="Black"
             Command="{Binding GoBackCommand}" />
             <Label
-            Text="Stats Coming Soon!" />
+            Text="Stats Coming Soon!" TextColor="White" />
             <Label
-            Text="Stats Coming Soon!" />
+            Text="Stats Coming Soon!" TextColor="White" />
             <Label
-            Text="Stats Coming Soon!" />
+            Text="Stats Coming Soon!" TextColor="White" />
             <Label
-            Text="Stats Coming Soon!" />
+            Text="Stats Coming Soon!" TextColor="White" />
             <Label
-            Text="Inspirational picture Coming Soon!" />
+            Text="Inspirational picture Coming Soon!" TextColor="White" />
 
         </StackLayout>
     </ContentPage.Content>

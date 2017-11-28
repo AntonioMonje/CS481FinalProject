@@ -1,23 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.Views.Workout">
+             x:Class="FinalProject.Views.Workout"
+             BackgroundImage="black.jpg">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Your Workouts" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
             <Button
             Text="Go Back!"
+                BackgroundColor="White"
+                TextColor="Black"
             Command="{Binding GoBackCommand}" />
-            <Label
-            Text="Workout Soon!" />
-            <Label
-            Text="Workout Coming Soon!" />
-            <Label
-            Text="Workouts Coming Soon!" />
-            <Label
-            Text="Workouts Coming Soon!" />
-            <Label
-            Text="Inspirational picture Coming Soon!" />
-
+            <ListView
+            x:Name="WorkoutListView"
+            ItemsSource="{Binding WorkoutCollection}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                    Text="{Binding Details}" 
+                    Detail="{Binding MDetails}"
+                    ImageSource="{Binding IconSource}">
+                            <ViewCell.ContextActions>
+                                <MenuItem
+                                x:Name="AddButton"
+                                AutomationId="AddButton"
+                                BindingContext="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
+                                Command="{Binding AddCommand}"
+                                CommandParameter="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
+                                Text="Add" />
+                                <MenuItem
+                                x:Name="DeleteButton"
+                                AutomationId="DeleteButton"
+                                Text="Delete"
+                                IsDestructive="True"
+                                  
+                                BindingContext="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
+                                Command="{Binding DeleteCommand}"
+                                CommandParameter="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"/>
+                            </ViewCell.ContextActions>
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
