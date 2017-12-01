@@ -7,38 +7,41 @@ using Xamarin.Forms;
 
 namespace FinalProject.Model
 {
-	public class WorkoutItem
+    public static class WorkoutItemModel
     {
-        public int pos
+        public class WorkoutItem
         {
-            get;
-            set;
-        }
-       
-        public string Details
-        {
-            get;
-            set;
-        }
-        public ImageSource IconSource
-        {
-            get;
-            set;
-        }
-        public string MDetails
-        {
-            get;
-            set;
-        }
-        public string URL
-        {
-            get;
-            set;
-        }
-        public string MoreD
-        {
-            get;
-            set;
+            public int pos
+            {
+                get;
+                set;
+            }
+
+            public string Details
+            {
+                get;
+                set;
+            }
+            public ImageSource IconSource
+            {
+                get;
+                set;
+            }
+            public string MDetails
+            {
+                get;
+                set;
+            }
+            public string URL
+            {
+                get;
+                set;
+            }
+            public string MoreD
+            {
+                get;
+                set;
+            }
         }
     }
 }

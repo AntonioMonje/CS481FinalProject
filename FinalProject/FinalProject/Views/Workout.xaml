@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FinalProject.Views.Workout"
              BackgroundImage="black.jpg">
     <ContentPage.Content>
@@ -20,14 +23,14 @@
                     Text="{Binding Details}" 
                     Detail="{Binding MDetails}"
                     ImageSource="{Binding IconSource}">
-                            <ViewCell.ContextActions>
+                            <ImageCell.ContextActions>
                                 <MenuItem
-                                x:Name="AddButton"
-                                AutomationId="AddButton"
+                                x:Name="MoreButton"
+                                AutomationId="MoreButton"
                                 BindingContext="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
-                                Command="{Binding AddCommand}"
+                                Command="{Binding MoreCommand}"
                                 CommandParameter="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
-                                Text="Add" />
+                                Text="More" />
                                 <MenuItem
                                 x:Name="DeleteButton"
                                 AutomationId="DeleteButton"
@@ -37,7 +40,7 @@
                                 BindingContext="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
                                 Command="{Binding DeleteCommand}"
                                 CommandParameter="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"/>
-                            </ViewCell.ContextActions>
+                            </ImageCell.ContextActions>
                         </ImageCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Xamarin.Forms.Xaml;
-using FinalProject.Model;
+using static FinalProject.Model.WorkoutItemModel;
 using System.Collections.ObjectModel;
 
 namespace FinalProject.ViewModels
@@ -16,16 +16,9 @@ namespace FinalProject.ViewModels
         
         public DelegateCommand GoBackCommand { get; set; }
         public DelegateCommand<WorkoutItem> DeleteCommand { get; set; }
-        public DelegateCommand<WorkoutItem> AddCommand { get; set; }
-
-        public WorkoutViewModel(INavigationService navigationService)
-        {
-            _navigationService = navigationService;
-            DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
-            AddCommand = new DelegateCommand<WorkoutItem>(AddB);
-            GoBackCommand = new DelegateCommand(GoBack);
-          
-        }
+        public DelegateCommand<WorkoutItem> MoreCommand { get; set; }
+         
+        
         private ObservableCollection<WorkoutItem> _WorkoutCollection = new ObservableCollection<WorkoutItem>();
         public ObservableCollection<WorkoutItem> WorkoutCollection
         {
@@ -33,14 +26,34 @@ namespace FinalProject.ViewModels
             set { SetProperty(ref _WorkoutCollection, value); }
 
         }
+        public WorkoutViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+            DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
+            MoreCommand = new DelegateCommand<WorkoutItem>(MoreB);
+            GoBackCommand = new DelegateCommand(GoBack);
+                   
+        }
+       
+        private void Populate()
+        {
+            var workoutList = new WorkoutItem()
+            {
+                Details = "Noragami",
+                MDetails = "This is is an Anime about Heros who fight villians. A weak kid with no powerr gets the powers of the strongest hero and tries to become a hero"
+            };
+            WorkoutCollection.Add(workoutList);
+        }
      
         private void DeleteB(WorkoutItem workoutItem)
         {
             _WorkoutCollection.Remove(workoutItem);
         }
-        private void AddB(WorkoutItem workoutItem)
+        private async void MoreB(WorkoutItem workoutItem)
         {
-            _WorkoutCollection.Remove(workoutItem);
+            var navParams = new NavigationParameters();
+            navParams.Add("WorkoutItemInfo", workoutItem);
+            await _navigationService.NavigateAsync("MoreInfo", navParams);
         }
         private void GoBack()
         {

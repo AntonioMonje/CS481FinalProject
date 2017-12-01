@@ -22,6 +22,7 @@ namespace FinalProject
             Container.RegisterTypeForNavigation<Workout>();
             Container.RegisterTypeForNavigation<Stats>();
             Container.RegisterTypeForNavigation<Qoutes>();
+            Container.RegisterTypeForNavigation<MoreInfo>();
         }
     }
 }

@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace FinalProject.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Workout : ContentPage
-	{
-		public Workout()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MoreInfo : ContentPage
+    {
+        public MoreInfo()
+        {
+            InitializeComponent();
+        }
+    }
 }
