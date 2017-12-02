@@ -7,10 +7,10 @@ using Xamarin.Forms;
 
 namespace FinalProject.Model
 {
-    public static class WorkoutItemModel
-    {
         public class WorkoutItem
         {
+        
+
             public int pos
             {
                 get;
@@ -43,5 +43,5 @@ namespace FinalProject.Model
                 set;
             }
         }
-    }
+    
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Xamarin.Forms.Xaml;
-using static FinalProject.Model.WorkoutItemModel;
+using FinalProject.Model;
 
 namespace WeatherApp.ViewModels
 {

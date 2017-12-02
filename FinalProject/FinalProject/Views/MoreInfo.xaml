@@ -10,12 +10,12 @@
             Text="Go Back!"
             Command="{Binding GoBackCommand}" />
         <Label
-            Text="" />
+            Text="hi" />
         <Label
-            Text="" />
+            Text="im" />
         <Label
-            Text="" />
+            Text="almost" />
         <Label
-            Text="" />
+            Text="done" />
     </StackLayout>
 </ContentPage>

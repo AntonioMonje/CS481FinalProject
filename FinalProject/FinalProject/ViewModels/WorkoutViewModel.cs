@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Xamarin.Forms.Xaml;
-using static FinalProject.Model.WorkoutItemModel;
+using FinalProject.Model;
 using System.Collections.ObjectModel;
 
 namespace FinalProject.ViewModels
@@ -15,10 +15,11 @@ namespace FinalProject.ViewModels
         INavigationService _navigationService;
         
         public DelegateCommand GoBackCommand { get; set; }
-        public DelegateCommand<WorkoutItem> DeleteCommand { get; set; }
         public DelegateCommand<WorkoutItem> MoreCommand { get; set; }
          
-        
+       //public string Details { get; set; }
+       //public string MDetails { get; set; }
+
         private ObservableCollection<WorkoutItem> _WorkoutCollection = new ObservableCollection<WorkoutItem>();
         public ObservableCollection<WorkoutItem> WorkoutCollection
         {
@@ -28,27 +29,14 @@ namespace FinalProject.ViewModels
         }
         public WorkoutViewModel(INavigationService navigationService)
         {
-            _navigationService = navigationService;
-            DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
+            _navigationService = navigationService;           
             MoreCommand = new DelegateCommand<WorkoutItem>(MoreB);
             GoBackCommand = new DelegateCommand(GoBack);
-                   
+            var workoutItem = new WorkoutItem();
+            _WorkoutCollection.Add(new WorkoutItem { Details = "it worked" });
         }
        
-        private void Populate()
-        {
-            var workoutList = new WorkoutItem()
-            {
-                Details = "Noragami",
-                MDetails = "This is is an Anime about Heros who fight villians. A weak kid with no powerr gets the powers of the strongest hero and tries to become a hero"
-            };
-            WorkoutCollection.Add(workoutList);
-        }
-     
-        private void DeleteB(WorkoutItem workoutItem)
-        {
-            _WorkoutCollection.Remove(workoutItem);
-        }
+       
         private async void MoreB(WorkoutItem workoutItem)
         {
             var navParams = new NavigationParameters();
@@ -62,12 +50,12 @@ namespace FinalProject.ViewModels
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-
+            
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-           
+            
         }
    
     }

@@ -16,8 +16,7 @@ namespace FinalProject.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.tabs;
-            ToolbarResource = Resource.Layout.toolbar;
+            
 
             base.OnCreate(bundle);
 
