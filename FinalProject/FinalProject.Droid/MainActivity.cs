@@ -11,12 +11,16 @@ using Microsoft.Practices.Unity;
 
 namespace FinalProject.Droid
 {
-    [Activity(Label = "FinalProject", Icon = "@drawable/running", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "FinalProject", Theme = "@style/splashscreen", Icon = "@drawable/running", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-            
+            base.Window.RequestFeature(WindowFeatures.ActionBar);
+            // Name of the MainActivity theme you had there before.
+            // Or you can use global::Android.Resource.Style.ThemeHoloLight
+            base.SetTheme(Resource.Style.splashscreen);
+
 
             base.OnCreate(bundle);
 

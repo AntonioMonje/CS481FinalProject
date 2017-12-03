@@ -9,11 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Inspiration" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            <Button
-            Text="Go Back!"
-                BackgroundColor="White"
-                TextColor="Black"
-            Command="{Binding GoBackCommand}" />
+            
             <Label
             Text="Daily Qoute Coming Soon!"  TextColor="White"/>
             <Label

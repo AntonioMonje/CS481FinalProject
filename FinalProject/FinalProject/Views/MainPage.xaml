@@ -9,7 +9,7 @@
     <ScrollView>
         <StackLayout x:Name="StackView">
             <Label Text="Main Menu" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            <Button Text="Workout" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
+            <Button Text="Exercises" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
                      BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage1Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>

@@ -8,24 +8,21 @@
              BackgroundImage="black.jpg">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Your Workouts" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            <Button
-                Text="Go Back!"
-                BackgroundColor="White"
-                TextColor="Black"
-                Command="{Binding GoBackCommand}" />
+            <Label Text="Your Exercises" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
             <ListView
                 x:Name="WorkoutListView"
                 IsPullToRefreshEnabled="True"
-                RefreshCommand="Handle_Refreshing"
-                 ItemsSource="{Binding WorkoutCollection}"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsRefreshing="{Binding IsRefreshing}" 
+                ItemsSource="{Binding WorkoutCollection}"
                 Margin="10,10,10,10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell
                             x:Name="cell"
                             Text="{Binding Details}" 
-                            Detail="{Binding MDetails}"                             
+                            Command="LinkCommand"
+                            CommandParameter="{Binding URL}"
                             ImageSource="{Binding IconSource}">
                             <ImageCell.ContextActions>
                                 <MenuItem
@@ -35,14 +32,7 @@
                                     Command="{Binding MoreCommand}"
                                     CommandParameter="{Binding Source={x:Reference cell}, Path=BindingContext}"
                                     Text="More" />
-                                <MenuItem
-                                    x:Name="DeleteButton"
-                                    AutomationId="DeleteButton"
-                                    Text="Delete"
-                                    IsDestructive="True"
-                                    BindingContext="{Binding Source={x:Reference WorkoutListView}, Path=BindingContext}"
-                                    Command="{Binding DeleteCommand}"
-                                    CommandParameter="{Binding Source={x:Reference cell}, Path=BindingContext}" />
+                                
                             </ImageCell.ContextActions>
                         </ImageCell>
                     </DataTemplate>

@@ -4,18 +4,15 @@
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True"
+              BackgroundColor="Silver"
     x:Class="FinalProject.Views.MoreInfo">
     <StackLayout>
-        <Button
-            Text="Go Back!"
-            Command="{Binding GoBackCommand}" />
-        <Label
-            Text="hi" />
-        <Label
-            Text="im" />
-        <Label
-            Text="almost" />
-        <Label
-            Text="done" />
+       
+        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="How to complete the Exercise" HorizontalTextAlignment="Center" TextColor="Orange"/>
+        <Label Text="{Binding WorkoutItem.MDetails}" />
+        <Label Text="For video tutorial go to the link Below:" HorizontalTextAlignment="Center" TextColor="Red"/>
+        <Label Text="{Binding WorkoutItem.URL}" HorizontalTextAlignment="Center" TextColor="Blue" />
+       
+        <Label VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Text="!Good Luck!" TextColor="Black"/>
     </StackLayout>
 </ContentPage>
