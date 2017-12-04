@@ -11,6 +11,8 @@ using Xamarin.Forms;
 using SkiaSharp.Views.Forms;
 using Microcharts;
 using Microcharts.Forms;
+using System.Collections.ObjectModel;
+using FinalProject.Model;
 
 namespace FinalProject.ViewModels
 {
@@ -20,36 +22,47 @@ namespace FinalProject.ViewModels
        
 
         public DelegateCommand GoBackCommand { get; set; }
-        public object ChartView { get; private set; }
-        public object MyListview { get; private set; }
-        public BarChart ChartData { get; private set; }
 
+       
         public void Data()
         {
-     var entries = new[]
+            var entries = new[]
 {
-    new Entry(200)
+                 new Entry(130)
     {
-        Label = "January",
-        ValueLabel = "200",
-        Color = SKColor.Parse("#266489")
+    Label = "Healthy",
+    ValueLabel = "130+",
+    Color = SKColor.Parse("#68B9C0")
     },
-    new Entry(400)
+    new Entry(160)
     {
-        Label = "February",
-        ValueLabel = "400",
-        Color = SKColor.Parse("#68B9C0")
+        Label = "Healthy to Average",
+        ValueLabel = "160+",
+    Color = SKColor.Parse("#266489")
     },
-    new Entry(-100)
+    new Entry(190)
     {
-        Label = "March",
-        ValueLabel = "-100",
-        Color = SKColor.Parse("#90D585")
+    Label = "Average to OverWeight",
+    ValueLabel = "190+",
+    Color = SKColor.Parse("#68B9C0")
+    },
+     new Entry(220)
+    {
+    Label = "OverWeight to Unhealthy",
+    ValueLabel = "220+",
+    Color = SKColor.Parse("#68B9C0")
+    },
+    new Entry(250)
+    {
+    Label = "Unhealthy",
+    ValueLabel = "250+",
+    Color = SKColor.Parse("#90D585")
     }
 };
+         
             var chart = new BarChart() { Entries = entries };
             
-            
+
         }
 
 		public StatsViewModel(INavigationService navigationService)
