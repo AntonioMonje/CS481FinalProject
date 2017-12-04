@@ -35,7 +35,7 @@ namespace FinalProject.ViewModels
         //    DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
             MoreCommand = new DelegateCommand<WorkoutItem>(MoreB);
             GoBackCommand = new DelegateCommand(GoBack);
-            Populate();
+            Populate();   
         }
         //private void DeleteB(WorkoutItem workoutItem)
         //{

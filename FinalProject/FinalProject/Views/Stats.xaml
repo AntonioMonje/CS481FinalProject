@@ -5,22 +5,12 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FinalProject.Views.Stats"
-             BackgroundImage="black.jpg">
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Your Stats" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-           
-            <Label
-            Text="Stats Coming Soon!" TextColor="White" />
-            <Label
-            Text="Stats Coming Soon!" TextColor="White" />
-            <Label
-            Text="Stats Coming Soon!" TextColor="White" />
-            <Label
-            Text="Stats Coming Soon!" TextColor="White" />
-            <Label
-            Text="Inspirational picture Coming Soon!" TextColor="White" />
-
-        </StackLayout>
+       
+                        <StackLayout>
+                            <microcharts:ChartView Chart="{Binding ChartData}" />
+                        </StackLayout>
+                
     </ContentPage.Content>
 </ContentPage>
