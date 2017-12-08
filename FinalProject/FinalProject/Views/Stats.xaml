@@ -8,19 +8,27 @@
              x:Class="FinalProject.Views.Stats"
             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms" >
     <ContentPage.Content>
+        
         <ScrollView>
+           
             <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
                 <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label Text="This Graph represents a how healthy a person is based on their weight." VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0"/>
-            <oxy:PlotView Model="{Binding Model}" Grid.Row="1"  />
-            <oxy:PlotView Model="{Binding Model2}"  Grid.Row="3" />
-        </Grid>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            <Label Text="Health Stats" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Grid.Row="0"/>
+            <Label TextColor="Yellow" Text="This Bar Graph represents a how healthy a person is based on their weight." VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1"/>
+            <oxy:PlotView Model="{Binding Model}" Grid.Row="2"/>
+            <Label TextColor="Yellow" Text="This  Pie Graph represents the amount of healthy people in the world based on their weight." VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="3"/>
+            <oxy:PlotView Model="{Binding Model2}"  Grid.Row="4"/>
+            <Label TextColor="Yellow" Text="!Your Personal Workout stats coming soon!" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="5"/>
+                <Label TextColor="Yellow" Text="!!Please wait patiently while our staff works on this!!" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="6"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

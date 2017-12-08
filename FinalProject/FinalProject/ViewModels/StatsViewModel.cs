@@ -46,6 +46,8 @@ namespace FinalProject.ViewModels
 
             xaxis.MajorGridlineStyle = LineStyle.Solid;
             xaxis.MinorGridlineStyle = LineStyle.Dot;
+            xaxis.MajorGridlineColor = OxyColor.FromRgb(255, 255, 224);
+            xaxis.MinorGridlineColor = OxyColor.FromRgb(255, 255, 224);
             xaxis.Labels.Add("Weight,130");
 
             xaxis.Labels.Add("160");
@@ -59,7 +61,7 @@ namespace FinalProject.ViewModels
             yaxis.Position = AxisPosition.Left;
             yaxis.MajorGridlineStyle = LineStyle.Dot;
             xaxis.MinorGridlineStyle = LineStyle.Dot;
-
+          
             ColumnSeries s1 = new ColumnSeries();
             s1.IsStacked = true;
             s1.Items.Add(new ColumnItem(130));
@@ -82,7 +84,8 @@ namespace FinalProject.ViewModels
 
             Model = new PlotModel();
             Model.Title = "Health Bar Chart";
-            Model.Background = OxyColors.Gray;
+            Model.TextColor = OxyColor.FromRgb(255, 255, 224);
+          
 
             Model.Axes.Add(xaxis);
             Model.Axes.Add(yaxis);
@@ -93,11 +96,12 @@ namespace FinalProject.ViewModels
         private void PieChat()
         {
             Model2 = new PlotModel { Title = "World population by continent" };
-
+            Model2.TextColor = OxyColor.FromRgb(255, 255, 224);
+            
             var ps = new PieSeries
             {
-                StrokeThickness = .25,
-                InsideLabelPosition = .25,
+                StrokeThickness = .75,
+                InsideLabelPosition = .50,
                 AngleSpan = 360,
                 StartAngle = 0
             };
@@ -108,7 +112,6 @@ namespace FinalProject.ViewModels
             seriesP1.Slices.Add(new PieSlice("Average", 929) { IsExploded = true });
             seriesP1.Slices.Add(new PieSlice("Overweight", 4157) { IsExploded = true });
             seriesP1.Slices.Add(new PieSlice("Underweight", 739) { IsExploded = true });
-            seriesP1.Slices.Add(new PieSlice("Perfect", 35) { IsExploded = true });
             Model2.Series.Add(seriesP1);
         }
         private void GoBack()
