@@ -15,6 +15,7 @@ namespace FinalProject.Views
         public Stats()
         {
             InitializeComponent();
+
         }
     }
 }

@@ -4,13 +4,23 @@
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True"
+              BackgroundImage="black.jpg"
              x:Class="FinalProject.Views.Stats"
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" >
+            xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms" >
     <ContentPage.Content>
-       
-                        <StackLayout>
-                            <microcharts:ChartView Chart="{Binding ChartData}" />
-                        </StackLayout>
-                
+        <ScrollView>
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="This Graph represents a how healthy a person is based on their weight." VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0"/>
+            <oxy:PlotView Model="{Binding Model}" Grid.Row="1"  />
+            <oxy:PlotView Model="{Binding Model2}"  Grid.Row="3" />
+        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
