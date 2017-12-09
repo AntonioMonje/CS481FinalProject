@@ -6266,8 +6266,8 @@ namespace FinalProject.Droid
 			// aapt resource value: 0x7f0200b4
 			public const int muscular = 2130837684;
 			
-			// aapt resource value: 0x7f0200c2
-			public const int notification_template_icon_bg = 2130837698;
+			// aapt resource value: 0x7f0200ca
+			public const int notification_template_icon_bg = 2130837706;
 			
 			// aapt resource value: 0x7f0200b5
 			public const int People = 2130837685;
@@ -6297,16 +6297,40 @@ namespace FinalProject.Droid
 			public const int splashscreen = 2130837693;
 			
 			// aapt resource value: 0x7f0200be
-			public const int splashscreen2 = 2130837694;
+			public const int splashscreen10 = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int splashscreen3 = 2130837695;
+			public const int splashscreen11 = 2130837695;
 			
 			// aapt resource value: 0x7f0200c0
-			public const int splashscreen4 = 2130837696;
+			public const int splashscreen12 = 2130837696;
 			
 			// aapt resource value: 0x7f0200c1
-			public const int splashscreen5 = 2130837697;
+			public const int splashscreen13 = 2130837697;
+			
+			// aapt resource value: 0x7f0200c2
+			public const int splashscreen2 = 2130837698;
+			
+			// aapt resource value: 0x7f0200c3
+			public const int splashscreen3 = 2130837699;
+			
+			// aapt resource value: 0x7f0200c4
+			public const int splashscreen4 = 2130837700;
+			
+			// aapt resource value: 0x7f0200c5
+			public const int splashscreen5 = 2130837701;
+			
+			// aapt resource value: 0x7f0200c6
+			public const int splashscreen6 = 2130837702;
+			
+			// aapt resource value: 0x7f0200c7
+			public const int splashscreen7 = 2130837703;
+			
+			// aapt resource value: 0x7f0200c8
+			public const int splashscreen8 = 2130837704;
+			
+			// aapt resource value: 0x7f0200c9
+			public const int splashscreen9 = 2130837705;
 			
 			static Drawable()
 			{

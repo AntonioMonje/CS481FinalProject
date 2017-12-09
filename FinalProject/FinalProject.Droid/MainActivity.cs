@@ -11,7 +11,7 @@ using Microsoft.Practices.Unity;
 
 namespace FinalProject.Droid
 {
-    [Activity(Label = "FinalProject", Theme = "@style/splashscreen", Icon = "@drawable/running", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
+    [Activity(Label = "FinalProject", Theme = "@style/splashscreen", Icon = "@drawable/splashscreen8", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

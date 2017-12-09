@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using static FinalProject.Model.QouteItemModel;
 using System.Runtime.CompilerServices;
-
+using Android.Media;
 
 namespace FinalProject.ViewModels
 {
@@ -26,7 +26,7 @@ namespace FinalProject.ViewModels
 
             GoBackCommand = new DelegateCommand(GoBack);
         }
-
+       
         private void GoBack()
         {
             _navigationService.GoBackAsync();

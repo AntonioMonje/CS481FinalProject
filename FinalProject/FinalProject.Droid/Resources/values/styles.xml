@@ -2,7 +2,7 @@
   <style name="MyTheme" parent="MyTheme.Base">
   </style>
   <style name="splashscreen" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowBackground">@drawable/splashscreen5</item>
+    <item name="android:windowBackground">@drawable/splashscreen12</item>
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowIsTranslucent">false</item>
     <item name="android:windowIsFloating">false</item>

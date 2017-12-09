@@ -92,10 +92,34 @@ namespace FinalProject.ViewModels
             Model.Series.Add(s1);
             Model.Series.Add(s2);
         }
-
+        private void Data()
+        {
+            var entries = new[]
+{
+    new Entry(200)
+    {
+        Label = "January",
+        ValueLabel = "200",
+    Color = SKColor.Parse("#266489")
+    },
+    new Entry(400)
+    {
+    Label = "February",
+    ValueLabel = "400",
+    Color = SKColor.Parse("#68B9C0")
+    },
+    new Entry(-100)
+    {
+    Label = "March",
+    ValueLabel = "-100",
+    Color = SKColor.Parse("#90D585")
+    }
+};
+            var chart = new LineChart() { Entries = entries };
+        }
         private void PieChat()
         {
-            Model2 = new PlotModel { Title = "World population by continent" };
+            Model2 = new PlotModel { Title = "World Health" };
             Model2.TextColor = OxyColor.FromRgb(255, 255, 224);
             
             var ps = new PieSeries
