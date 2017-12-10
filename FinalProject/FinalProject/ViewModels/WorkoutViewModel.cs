@@ -32,10 +32,11 @@ namespace FinalProject.ViewModels
         public WorkoutViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-        //    DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
+            //    DeleteCommand = new DelegateCommand<WorkoutItem>(DeleteB);
+            Populate();
             MoreCommand = new DelegateCommand<WorkoutItem>(MoreB);
             GoBackCommand = new DelegateCommand(GoBack);
-            Populate();   
+           
         }
         //private void DeleteB(WorkoutItem workoutItem)
         //{
@@ -53,6 +54,12 @@ namespace FinalProject.ViewModels
             _WorkoutCollection.Add(new WorkoutItem { Details = "MILITARY PRESS", URL = "https://www.youtube.com/watch?v=waeCyaAQRn8", IconSource = "MilitaryPress", MDetails = "Start by placing a barbell that is about chest high on a squat rack. Once you have selected the weights, grab the barbell using a pronated (palms facing forward) grip. Make sure to grip the bar wider than shoulder width apart from each other. Slightly bend the knees and place the barbell on your collar bone. Lift the barbell up keeping it lying on your chest. Take a step back and position your feet shoulder width apart from each other. Once you pick up the barbell with the correct grip length, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position. Lower the bar down to the collarbone slowly as you inhale. Lift the bar back up to the starting position as you exhale. Repeat for the recommended amount of repetitions." });
             _WorkoutCollection.Add(new WorkoutItem { Details = "LEG RAISE", URL = "https://www.youtube.com/watch?v=JB2oyawG9KI", IconSource = "LegRaise", MDetails = "The leg raise is a strength training exercise which targets the iliopsoas (the interior hip flexors). Because the abdominal muscles are used isometrically to stabilize the body during the motion, leg raises are also often used to strengthen the rectus abdominis muscle and the internal and external oblique muscles" });
             _WorkoutCollection.Add(new WorkoutItem { Details = "LATERAL RAISE", URL = "https://www.youtube.com/watch?v=geenhiHju-o", IconSource = "LateralRaise", MDetails = "Grasp dumbbells in front of thighs with elbows slightly bent. Bend over slightly with hips and knees bent slightly. Raise upper arms to sides until elbows are shoulder height. Maintain elbows' height above or equal to wrists. Lower and repeat." });
+
+            _WorkoutCollection.Add(new WorkoutItem { Details = "ARES", URL = "NONE", IconSource = "W1", MDetails = "3 sets: set1{10 reps of sit ups, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}, set2{8 reps of sit ups, 10 reps of Bicep curls, 8 reps os russian twist, 6 reps bench press}, set3{10 reps of sit ups, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}" });
+            _WorkoutCollection.Add(new WorkoutItem { Details = "APOLLO", URL = "NONE", IconSource = "W2", MDetails = "3 sets: set1{10 reps of sit ups, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps french press}, set2{8 reps of sit ups, 10 reps of Bicep curls, 8 reps os russian twist, 6 reps french press}, set3{10 reps of sit ups, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps french press}" });
+            _WorkoutCollection.Add(new WorkoutItem { Details = "CHRONOS", URL = "NONE", IconSource = "W3", MDetails = "3 sets: set1{10 reps of leg raises, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}, set2{8 reps of leg raises, 10 reps of Bicep curls, 8 reps os russian twist, 6 reps bench press}, set3{10 reps of leg raisese, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}" });
+            _WorkoutCollection.Add(new WorkoutItem { Details = "DIONYSUS", URL = "NONE", IconSource = "W5", MDetails = "3 sets: set1{10 reps of sit ups, 12 reps of bench dips, 10 reps os russian twist, 8 reps bench press}, set2{8 reps of sit ups, 10 reps of bench dips, 8 reps os russian twist, 6 reps bench press}, set3{10 reps of sit ups, 12 reps of Bench dips, 10 reps os russian twist, 8 reps bench press}" });
+            _WorkoutCollection.Add(new WorkoutItem { Details = "HERMES", URL = "NONE", IconSource = "W6", MDetails = "3 sets: set1{10 reps of military press, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}, set2{8 reps of military press, 10 reps of Bicep curls, 8 reps os russian twist, 6 reps bench press}, set3{10 reps of military press, 12 reps of Bicep curls, 10 reps os russian twist, 8 reps bench press}" });
         }
         
        
@@ -81,7 +88,7 @@ namespace FinalProject.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            
+           
         }
    
     }
