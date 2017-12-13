@@ -4,9 +4,11 @@
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True"
+        xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
              x:Class="FinalProject.Views.Qoutes"
              BackgroundImage="black.jpg">
     <ContentPage.Content>
+        
         <StackLayout>
             <Label Text="Inspiration" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
             
@@ -20,7 +22,7 @@
             Text="Daily Qoute Coming Soon!" TextColor="White"/>
             <Label
             Text="Inspirational picture Coming Soon!" TextColor="White" />
-
+            
         </StackLayout>
 
     </ContentPage.Content>

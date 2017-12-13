@@ -9,7 +9,9 @@ using System.Net.Http;
 using static FinalProject.Model.QouteItemModel;
 using System.Runtime.CompilerServices;
 using Android.Media;
-
+using Xamanimation;
+using Xamanimation.Extensions;
+using Xamanimation.Helpers;
 namespace FinalProject.ViewModels
 {
     public class QoutesViewModel : BindableBase, INavigatedAware
@@ -23,7 +25,7 @@ namespace FinalProject.ViewModels
         public QoutesViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-
+            
             GoBackCommand = new DelegateCommand(GoBack);
         }
        
@@ -38,7 +40,9 @@ namespace FinalProject.ViewModels
             set { SetProperty(ref _QouteCollection, value); }
 
         }
-       
+      
+    
+
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
         }

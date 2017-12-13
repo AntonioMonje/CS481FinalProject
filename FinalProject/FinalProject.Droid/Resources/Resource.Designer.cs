@@ -26,6 +26,7 @@ namespace FinalProject.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::ModernHttpClient.Resource.String.library_name = global::FinalProject.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FinalProject.Droid.Resource.Attribute.actionBarSize;
 			global::Xuni.Forms.ChartCore.Platform.Android.Resource.Animation.abc_fade_in = global::FinalProject.Droid.Resource.Animation.abc_fade_in;
 			global::Xuni.Forms.ChartCore.Platform.Android.Resource.Animation.abc_fade_out = global::FinalProject.Droid.Resource.Animation.abc_fade_out;
@@ -7737,6 +7738,9 @@ namespace FinalProject.Droid
 			
 			// aapt resource value: 0x7f07003a
 			public const int character_counter_pattern = 2131165242;
+			
+			// aapt resource value: 0x7f070040
+			public const int library_name = 2131165248;
 			
 			// aapt resource value: 0x7f070002
 			public const int mr_button_content_description = 2131165186;
