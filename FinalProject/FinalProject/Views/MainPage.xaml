@@ -13,7 +13,7 @@
                      BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage1Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>
-            <Button Text="Qoutes" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
+            <Button Text="Weather Check" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Black" 
                     BindingContext="{Binding Source={x:Reference StackView}, Path=BindingContext}"
                                 Command="{Binding NavToNewPage2Command}"
                                 CommandParameter="{Binding Source={x:Reference StackView}, Path=BindingContext}"/>

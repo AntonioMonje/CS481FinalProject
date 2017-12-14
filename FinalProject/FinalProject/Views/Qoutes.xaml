@@ -6,24 +6,75 @@
     prism:ViewModelLocator.AutowireViewModel="True"
         xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
              x:Class="FinalProject.Views.Qoutes"
-             BackgroundImage="black.jpg">
-    <ContentPage.Content>
-        
-        <StackLayout>
-            <Label Text="Inspiration" BackgroundColor="#ff4500" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            
-            <Label
-            Text="Daily Qoute Coming Soon!"  TextColor="White"/>
-            <Label
-            Text="Daily Qoute Coming Soon!" TextColor="White"/>
-            <Label
-            Text="Daily Qoute Coming Soon!" TextColor="White"/>
-            <Label
-            Text="Daily Qoute Coming Soon!" TextColor="White"/>
-            <Label
-            Text="Inspirational picture Coming Soon!" TextColor="White" />
-            
-        </StackLayout>
+             >
+    <StackLayout
+        Padding="0,20,0,0"
+        HorizontalOptions="Center"
+        VerticalOptions="Start">
 
-    </ContentPage.Content>
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="CenterAndExpand">
+            <Entry
+                Placeholder="Enter Location"
+                Text="{Binding LocationEnteredByUser}"
+                WidthRequest="200" />
+            <Button
+                Text="Search Weather"
+                Command="{Binding GetWeatherForLocationCommand}" />
+        </StackLayout>
+        <ListView
+            x:Name="WeatherListView"
+            ItemsSource="{Binding WeatherCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell
+                        x:Name="WeatherItemCell">
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                x:Name="MoreInfoButton"
+                                AutomationId="MoreInfoButton"
+                                BindingContext="{Binding Source={x:Reference WeatherListView}, Path=BindingContext}"
+                                Command="{Binding NavToMoreInfoPageCommand}"
+                                CommandParameter="{Binding Source={x:Reference WeatherItemCell}, Path=BindingContext}"
+                                Text="More" />
+                            <MenuItem
+                                x:Name="DeleteButton"
+                                AutomationId="DeleteButton"
+                                Text="Delete"
+                                IsDestructive="True"
+                                BindingContext="{Binding Source={x:Reference WeatherListView}, Path=BindingContext}"
+                                Command="{Binding DeleteCommand}"
+                                CommandParameter="{Binding Source={x:Reference WeatherItemCell}, Path=BindingContext}"/>
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label
+                                    x:Name="LocationNameLabel"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center"
+                                    Margin="10" />
+                                <Label
+                                    x:Name="TemperatureLabel"
+                                    Text="{Binding Main.Temp, StringFormat='Temp: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                                <Label
+                                    x:Name="CloudLabel"
+                                    Text="{Binding Clouds.All, StringFormat='Cloud %: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                                <Label
+                                    x:Name="HumidityLabel"
+                                    Text="{Binding Main.Humidity, StringFormat='Humidity%:{0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

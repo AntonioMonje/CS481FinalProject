@@ -1,63 +1,135 @@
-﻿    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using Xamarin.Forms;
-    using Newtonsoft.Json;
+﻿using System;
+using System.Net;
+using System.Collections.Generic;
 
-namespace FinalProject.Model
+using Newtonsoft.Json;
+namespace FinalProject.Models
 {
-    public static class QouteItemModel
+    public static class WeatherItemModel
     {
-        public partial class GettingStarted
+        public partial class WeatherItem
         {
-            [JsonProperty("contents")]
-            public Contents Contents { get; set; }
+            [JsonProperty("coord")]
+            public Coord Coord { get; set; }
 
-            [JsonProperty("success")]
-            public Success Success { get; set; }
-        }
+            [JsonProperty("name")]
+            public string Name { get; set; }
 
-        public partial class Success
-        {
-            [JsonProperty("total")]
-            public long Total { get; set; }
-        }
+            [JsonProperty("clouds")]
+            public Clouds Clouds { get; set; }
 
-        public partial class Contents
-        {
-            [JsonProperty("quotes")]
-            public Quote[] Quotes { get; set; }
-        }
+            [JsonProperty("base")]
+            public string Base { get; set; }
 
-        public partial class Quote
-        {
-            [JsonProperty("author")]
-            public string Author { get; set; }
-
-            [JsonProperty("category")]
-            public string Category { get; set; }
+            [JsonProperty("cod")]
+            public long Cod { get; set; }
 
             [JsonProperty("id")]
-            public string Id { get; set; }
+            public long Id { get; set; }
 
-            [JsonProperty("length")]
-            public string Length { get; set; }
+            [JsonProperty("dt")]
+            public long Dt { get; set; }
 
-            [JsonProperty("quote")]
-            public string PurpleQuote { get; set; }
+            [JsonProperty("main")]
+            public Main Main { get; set; }
 
-            [JsonProperty("tags")]
-            public string[] Tags { get; set; }
+            [JsonProperty("visibility")]
+            public long Visibility { get; set; }
+
+            [JsonProperty("sys")]
+            public Sys Sys { get; set; }
+
+            [JsonProperty("weather")]
+            public Weather[] Weather { get; set; }
+
+            [JsonProperty("wind")]
+            public Wind Wind { get; set; }
         }
 
-        public partial class GettingStarted
+        public partial class Coord
         {
-            public static GettingStarted FromJson(string json) => JsonConvert.DeserializeObject<GettingStarted>(json, Converter.Settings);
+            [JsonProperty("lat")]
+            public double Lat { get; set; }
+
+            [JsonProperty("lon")]
+            public double Lon { get; set; }
         }
 
-       
-            public static string ToJson(this GettingStarted self) => JsonConvert.SerializeObject(self, Converter.Settings);
-        
+        public partial class Clouds
+        {
+            [JsonProperty("all")]
+            public long All { get; set; }
+        }
+
+        public partial class Main
+        {
+            [JsonProperty("pressure")]
+            public long Pressure { get; set; }
+
+            [JsonProperty("temp_max")]
+            public double TempMax { get; set; }
+
+            [JsonProperty("humidity")]
+            public long Humidity { get; set; }
+
+            [JsonProperty("temp")]
+            public double Temp { get; set; }
+
+            [JsonProperty("temp_min")]
+            public double TempMin { get; set; }
+        }
+
+        public partial class Sys
+        {
+            [JsonProperty("id")]
+            public long Id { get; set; }
+
+            [JsonProperty("sunrise")]
+            public long Sunrise { get; set; }
+
+            [JsonProperty("country")]
+            public string Country { get; set; }
+
+            [JsonProperty("message")]
+            public double Message { get; set; }
+
+            [JsonProperty("sunset")]
+            public long Sunset { get; set; }
+
+            [JsonProperty("type")]
+            public long Type { get; set; }
+        }
+
+        public partial class Weather
+        {
+            [JsonProperty("icon")]
+            public string Icon { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+            [JsonProperty("id")]
+            public long Id { get; set; }
+
+            [JsonProperty("main")]
+            public string Main { get; set; }
+        }
+
+        public partial class Wind
+        {
+            [JsonProperty("deg")]
+            public long Deg { get; set; }
+
+            [JsonProperty("speed")]
+            public double Speed { get; set; }
+        }
+
+        public partial class WeatherItem
+        {
+            public static WeatherItem FromJson(string json) => JsonConvert.DeserializeObject<WeatherItem>(json, Converter.Settings);
+        }
+
+        public static string ToJson(this WeatherItem self) => JsonConvert.SerializeObject(self, Converter.Settings);
 
         public class Converter
         {
