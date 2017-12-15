@@ -31,13 +31,7 @@
                     <ViewCell
                         x:Name="WeatherItemCell">
                         <ViewCell.ContextActions>
-                            <MenuItem
-                                x:Name="MoreInfoButton"
-                                AutomationId="MoreInfoButton"
-                                BindingContext="{Binding Source={x:Reference WeatherListView}, Path=BindingContext}"
-                                Command="{Binding NavToMoreInfoPageCommand}"
-                                CommandParameter="{Binding Source={x:Reference WeatherItemCell}, Path=BindingContext}"
-                                Text="More" />
+                            
                             <MenuItem
                                 x:Name="DeleteButton"
                                 AutomationId="DeleteButton"

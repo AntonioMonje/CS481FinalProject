@@ -22,7 +22,7 @@ namespace FinalProject.ViewModels
         public DelegateCommand<WeatherItem> DeleteCommand { get; set; }
         public DelegateCommand NavToNewPageCommand { get; set; }
         public DelegateCommand GetWeatherForLocationCommand { get; set; }
-        public DelegateCommand<WeatherItem> NavToMoreInfoPageCommand { get; set; }
+        
 
         private string _buttonText;
         public string ButtonText
@@ -58,7 +58,7 @@ namespace FinalProject.ViewModels
             _navigationService = navigationService;
             DeleteCommand = new DelegateCommand<WeatherItem>(DeleteB);
             GetWeatherForLocationCommand = new DelegateCommand(GetWeatherForLocation);
-            NavToMoreInfoPageCommand = new DelegateCommand<WeatherItem>(NavToMoreInfoPage);
+           
 
         
         }
@@ -73,12 +73,7 @@ namespace FinalProject.ViewModels
         {
             _weatherCollection.Remove(weatherItem);
         }
-        private async void NavToMoreInfoPage(WeatherItem weatherItem)
-        {
-            var navParams = new NavigationParameters();
-            navParams.Add("WeatherItemInfo", weatherItem);
-            await _navigationService.NavigateAsync("MorePage", navParams);
-        }
+       
 
         internal async void GetWeatherForLocation()
         {
