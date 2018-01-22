@@ -81,7 +81,7 @@ namespace FinalProject.ViewModels
             var uri = new Uri(
                 string.Format(
                     $"http://api.openweathermap.org/data/2.5/weather?q={LocationEnteredByUser}&units=imperial&APPID=" +
-                    $"fc1eb676c79af15d04d5bdb88276996a"));
+                    $"Your API key"));
             var response = await client.GetAsync(uri);
             WeatherItem weatherData = null;
             if (response.IsSuccessStatusCode)
